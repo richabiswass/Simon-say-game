@@ -1,0 +1,247 @@
+:root {
+  --bg-light: #e0f0ff;
+  --bg-dark: #1e293b;
+  --text-light: #0f172a;
+  --text-dark: #f8fafc;
+  --card-light: #ffffff;
+  --card-dark: #334155;
+  --primary: #2563eb;
+  --secondary: #10b981;
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  /* background-color: var(--bg-light); */
+  background-color: #c6dbf0;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.game-card {
+  background: var(--bg-light);
+  box-shadow: 20px 80px 40px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  padding: 25px 20px;
+  width: 70vmin;
+  max-width: 800px;
+  animation: fadeInUp 0.6s ease;
+  transition: background-color 0.3s ease;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+body.dark-mode .game-card {
+  background: var(--card-dark);
+  box-shadow: 0 8px 32px rgba(255, 255, 255, 0.05);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.controls .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-weight: 600;
+  /* flex: 1; */
+}
+
+.controls select,
+.controls button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* .controls select,
+.controls button:hover{
+  background-color: #4338ca;
+  transform: translateY(-2px);
+} */
+
+
+
+.controls select {
+  background: white;
+  color: black;
+}
+
+.btns-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0 20px;
+  flex-wrap: wrap;
+}
+
+button.btns-style {
+  /* background-color: #4f46e5; */
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 10px rgba(0,0,0,0.2);
+}
+
+
+.btns-style.primary{
+  display: none;
+}
+.secondary.clicked{
+  transform: scale(0.97);
+  background: rgb(148, 27, 27);
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+}
+
+.main-div {
+  width: 70vmin;
+  height: 70vmin;
+  max-width: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  background-color: #d7cbcd;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.inner-div {
+  width: 48%;
+  height: 48%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sky { background-color: 	#64dd16; }
+.orange { background-color: 	#f11414; }
+.red { background-color: #368ccc; }
+.blue { background-color: 	#ffc900; }
+
+.flash {
+  animation: flashAnim 0.3s ease;
+}
+
+@keyframes flashAnim {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.userFlash {
+  box-shadow: 0 0 20px 5px yellow;
+}
+
+.game-over .main-div {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0px); }
+}
+
+@media (max-width: 300px) {
+  .controls .row,
+  .btns-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  button.btns-style {
+    
+    min-width: 45%;
+  }
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  padding: 10px 20px;      /* Fixed padding */
+  font-size: 1rem;         /* Fixed font size */
+  min-width: 120px;        /* Optional: fixed width */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}

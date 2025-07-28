@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="game-card">
+      <header>
+        <h1>Simon Says Game</h1>
+      </header>
+
+      <main>
+        <div class="controls">
+          <div class="row">
+            <label for="mode-select">Game Mode:</label>
+            <select id="mode-select">
+              <option value="normal">Normal</option>
+              <option value="fast">Fast</option>
+              <option value="memory">Memory</option>
+            </select>
+          </div>
+          <div class="row">
+            <button id="sound-toggle"  title="Toggle Sound">🔊 On/Off</button>
+            <button id="theme-toggle" >🌞 Theme</button>
+          </div>
+        </div>
+
+        <h2 id="level-title" style="margin-bottom: 30px;">Press any key or click Start</h2>
+        
+
+        <div class="btns-container">
+          <button id="start-btn" class="btns-style  ">▶️ Start Game</button>
+          <button id="restart-btn" class="btns-style secondary ">🔁 Restart Game</button>
+        </div>
+
+        <div class="score-board">
+          <h3 id="score">🏆 Score: 0</h3>
+          <h3 id="high-score">🏆 High Score: 0</h3>
+        </div>
+
+
+        <div class="outer">
+          <div class="main-div">
+            <div class="inner-div sky" id="sky"></div>
+            <div class="inner-div orange" id="orange"></div>
+            <div class="inner-div red" id="red"></div>
+            <div class="inner-div blue" id="blue"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
