@@ -1,4 +1,5 @@
-🎮 Simon Says Game
+# 🎮 Simon Says Game !
+
 An interactive Simon Says Game built with HTML, CSS, and JavaScript. This web-based game challenges your memory and reaction speed as you follow color sequences and level up with each correct match.
 
 🚀 Features
